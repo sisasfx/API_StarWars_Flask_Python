@@ -10,6 +10,8 @@ from utils import APIException, generate_sitemap
 from admin import setup_admin
 from models.index import db, Characters, Planets, User
 from domain.user.route import user_router
+from domain.characters.route import character_router
+from domain.planets.route import planet_router
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -36,34 +38,14 @@ def sitemap():
     return generate_sitemap(app)
 
 ############## CHARACTERS ##############
-# GET CHARACTER
-
-
-#GET ONE CHARACTER
- 
+character = character_router(app) 
 
 ############## PLANETS ##############
-# GET ALL PLANETS
-
-
-# GET ONE PLANET
-
-
+planets = planet_router(app)
 ############## USERS ##############
-# GET ALL USERS
 users = user_router(app)
     
 
-# GET FAVOURITES FROM USER
-
-
-############# POST #################
-# POST FAVORITE CHARACTER
-
-
-# POST FAVORITE PLANET
-
-# POST USER
 
 
 ############# DELETE #################
@@ -71,11 +53,6 @@ users = user_router(app)
 
 
 # DELETE CHARACTER
-
-
-
-# ADD USER
-
 
 
 

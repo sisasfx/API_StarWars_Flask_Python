@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import request
 from models.index import User
 import domain.user.controller as Controller
 
