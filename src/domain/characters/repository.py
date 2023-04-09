@@ -19,3 +19,10 @@ def post_character(body):
     db.session.add(character)
     db.session.commit()
     return character.serialize()
+
+# DELETE CHARACTER
+def delete_character(id):
+    character = Characters.query.get(id)
+    db.session.delete(character)
+    db.session.commit()
+    return character.serialize()

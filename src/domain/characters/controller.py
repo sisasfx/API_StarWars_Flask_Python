@@ -17,3 +17,7 @@ def post_character(body):
     if body['name'] is None:
         return Response.response_error('Name is null', 400)
     return Repository.post_character(body), 201
+
+def delete_character(id):
+    character = Repository.delete_character(id)
+    return character

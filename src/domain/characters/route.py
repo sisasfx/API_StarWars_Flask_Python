@@ -16,3 +16,7 @@ def character_router(app):
     def post_character():
         body = request.get_json()
         return Controller.post_character(body)
+    
+    @app.route('/people',methods=['DELETE'])
+    def delete_character():
+        return Controller.delete_character(id)
